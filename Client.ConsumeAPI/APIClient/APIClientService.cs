@@ -5,7 +5,7 @@ namespace Client.ConsumeAPI.APIClient
     public class APIClientService<T> : IAPIClientService<T> where T : class
     {
         private readonly RestClient _RestClient;
-        private readonly string _baseurl = "https://localhost:81/api/";
+        private readonly string _baseurl = "http://localhost:81/api/";
         public APIClientService()
         {
             _RestClient = new RestClient(_baseurl);
