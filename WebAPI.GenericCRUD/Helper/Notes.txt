@@ -1,0 +1,10 @@
+
+dotnet add package NLog --version 5.2.3
+
+
+http://localhost:5274/swagger/index.html
+
+
+ref:
+https://github.com/NLog/NLog/wiki/Getting-started-with-ASP.NET-Core-6
+

@@ -9,15 +9,18 @@ namespace WebAPI.GenericCRUD.Controllers
     public class BranchController : ControllerBase
     {
         private IRepository<Branch> _branchRepository;
+        private readonly ILogger<BranchController> _logger;
 
-        public BranchController(IRepository<Branch> branchRepository)
+        public BranchController(IRepository<Branch> branchRepository, ILogger<BranchController> logger)
         {
+            _logger = logger;
             _branchRepository = branchRepository;
         }
         [HttpGet]
         [Route("GetAll")]
         public async Task<ActionResult<IEnumerable<Branch>>> GetAll()
         {
+            _logger.LogInformation("Hello, this is Get All Async: Branch");
             return Ok(await _branchRepository.GetAllAsync());
         }
         [HttpGet]
